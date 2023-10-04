@@ -190,6 +190,7 @@ footer {
     .eyecatch {
         display: flex;
         gap: 20px;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
     }
 }
