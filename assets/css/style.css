@@ -94,6 +94,14 @@ header {
     max-width: 400px;
 }
 
+.ul-level1 {
+    margin-left: 1rem;
+}
+.ul-level2 {
+    margin-left: 2rem;
+}
+
+
 .input-validity-status-loading {
   opacity: 0; /* when the item is in progress, change this value to 1 */
   position: absolute !important;
