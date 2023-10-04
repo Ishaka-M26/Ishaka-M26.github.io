@@ -152,6 +152,12 @@ header {
     color: var(--ikejima-font-color-dark);
 }
 
+.ikejima-typography-heading-sub {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ikejima-font-color-dark);
+}
+
 footer {
     height: 300px;
     background-color: var(--ikejima-accent-color-b);
