@@ -48,6 +48,7 @@ header {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    list-style: none;
 }
 
 .eyecatch {
@@ -86,13 +87,13 @@ header {
 .photo-base {
     background-color: var(--ikejima-accent-color);
     border-radius: 50%;
-    width: fit-content;
+    width: 300px;
     overflow: hidden;
     padding: 10px;
 }
 
 .ikejima-photo {
-    max-width: 400px;
+    width: 100%;
     filter: grayscale(1);
 }
 
@@ -159,6 +160,12 @@ header {
 --------------------------- */
 .ikejima-typography-medium {
     font-size: 1rem;
+    color: var(--ikejima-font-color-dark);
+}
+
+.ikejima-typography-medium-bold {
+    font-size: 1rem;
+    font-weight: bold;
     color: var(--ikejima-font-color-dark);
 }
 
