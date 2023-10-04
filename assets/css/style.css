@@ -86,12 +86,14 @@ header {
 .photo-base {
     background-color: var(--ikejima-accent-color);
     border-radius: 50%;
-    width: 400px;
-    height: 400px;
+    width: fit-content;
+    overflow: hidden;
+    padding: 10px;
 }
 
 .ikejima-photo {
     max-width: 400px;
+    filter: grayscale(1);
 }
 
 .ul-level1 {
