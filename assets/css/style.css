@@ -56,6 +56,23 @@ header {
     flex-direction: row;
 }
 
+.section_title {
+    position: relative;
+    width: fit-content;
+}
+
+.section_title::after {
+    background-color: var(--ikejima-accent-color);
+    height: 10px;
+    content: "";
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0%;
+    bottom: 20%;
+    z-index: -1;
+}
+
 .eyecatch__description {
     display: flex;
     flex-direction: column;
