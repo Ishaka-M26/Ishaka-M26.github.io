@@ -7,6 +7,7 @@
     --ikejima-background-color-rgb: 232,230,222;
     --ikejima-font-color-dark: #000;
     --ikejima-font-color-dark-rgb: 0, 0, 0;
+    --ikejima-header-height: 50px;
 }
 
 
@@ -31,17 +32,28 @@ header {
     padding: 10px 10px 0px 10px;
     top: 0%;
     width: 100%;
+    height: var(--ikejima-header-height);
     z-index: 3;
 }
 
+.wrapper {
+    padding: 0 4%;
+}
+
+.offset {
+    height: var(--ikejima-header-height);
+}
 
 .eyecatch {
     display: flex;
     gap: 20px;
-    flex-direction: column;    
+    flex-direction: row;
 }
 
-
+.ikejima-photo {
+    max-width: 400px;
+    border-radius: 50%;
+}
 
 .input-validity-status-loading {
   opacity: 0; /* when the item is in progress, change this value to 1 */
