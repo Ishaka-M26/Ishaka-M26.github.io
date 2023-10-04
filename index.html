@@ -23,13 +23,19 @@
         <script type="text/javascript" src="assets/js/tablesorter/js/jquery.tablesorter.js"></script>
         <script type="text/javascript" src="assets/js/tablesorter/js/jquery.tablesorter.widgets.js"></script>
         <script type="text/javascript" src="assets/js/tablesorter/js/widgets/widget-output.js"></script>
+
+        <!-- smooth-scroll -->
+        <!-- Get minor updates and patch fixes within a major version -->
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+
+
     </head>
 
     <body>
         <div class="wrapper"><!-- wrapper -->
 
             <!-- header (fixed) -->
-            <header>
+            <header id="header">
                 <h1><a href="index.html"></a></h1>
                 <nav>
                     <ul class="main-nav">
@@ -785,4 +791,8 @@ $(function() {
 });
 
 
+var scroll = new SmoothScroll('a[href*="#"]', {
+   speed: 300,//スクロールする速さ
+   header: '#header'//固定ヘッダーがある場合
+  });
 </script>
