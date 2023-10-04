@@ -11,10 +11,22 @@
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+        <!-- theme of tablesorter -->
+        <link rel="stylesheet" href="assets/js/tablesorter/css/theme.default.css">
+        <link rel="stylesheet" href="assets/js/tablesorter/css/theme.dropbox-recome.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/tablesorter/js/jquery.tablesorter.js"></script>
+        <script type="text/javascript" src="assets/js/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+        <script type="text/javascript" src="assets/js/tablesorter/js/widgets/widget-output.js"></script>
     </head>
 
     <body>
         <div class="wrapper"><!-- wrapper -->
+
+            <!-- header (fixed) -->
             <header>
                 <h1><a href="index.html"></a></h1>
                 <nav>
@@ -26,9 +38,152 @@
                 </nav>
             </header>
 
-            <div class="home-content wrapper">
-            </div><!-- /.home-content -->
+
+
+
+            <!-- eyecatch(switch flex) -->
+            <div class="eyecatch">
+                <!-- description -->
+                <div>
+                    <h1 class="ikejima-typography-heading">
+                        My name is Takashi Ikejima.
+                        I'm Japanese Multi-Layer Software Engineer.
+                        Thank you for visiting my portfolio site.
+                    </h1>
+                </div>
+
+                <!-- photo -->
+                <div>
+                    <img src="assets/img/takashiikejima.png">
+                </div>
+            </div><!-- eyecatch -->
+
+            <section id="about">
+                <div>
+                    <p class="ikejima-typography-medium">
+                        Hi there, Nice to meet you. First of all, thanks for taking time to know more about me. My name is Takashi Ikejima and I am from Japan. My hometown is Kyoto. I have completed my Bachelors of Computer Science in Ryukoku University. I've spent 10+ years working as embedded software engineer. I have sound knowledge on C/C++ Programming, Some CPU, SoC and Peripherals(DMA, Ethernet Controller, I2C, SPI, etc), Object Oriented Design, Device Driver Programming, Some Standard protocols(IEEE802.1, USB, etc), Real-time Operating System, Linux, Windows, iOS Application, and Web development technologies. I'm currently assistant manager in Japanese company.
+                        I spend my free time doing FPGA programming or web designing, coding. My hobbies include workout in Gym, watching movie, singing in karaoke. Lets get in touch and discuss more !!
+                    </p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <div class="experience__cti">
+
+                    <h2 class="ikejima-typography-heading">
+                        Embedded Software Engineer | Communication Technologies Inc.
+                    </h2>
+                    <p class="ikejima-typography-medium">
+                    </p>
+
+                    <div class="table-wrapper">
+                        <div class="input-validity-status-loading" style="margin: 30px auto; position: static !important; opacity: 1;"></div>
+
+                        <table id="myTable" class="tablesorter" style="display: none;">
+
+                            <thead>
+                                <tr style="white-space: nowrap;">
+                                  <th>Manufacturer</th>
+                                  <th>Name</th>
+                                  <th>How long</th>
+                                  <th>Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- table row -->
+                                <tr>
+                                    <td>
+                                        <p class="ikejima-typography-medium-dark">
+                                            ARM
+                                        </p>
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: start;">
+                                        <p class="ikejima-typography-medium-dark">
+                                            CoreTex M1
+                                        </p>
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: start;">
+                                        <p class="ikejima-typography-medium-dark">
+                                            2
+                                        </p>
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: end;">
+                                        <p class="ikejima-typography-medium-dark">
+                                            Car communication
+                                        </p>
+                                    </td>
+                                </tr><!-- table row -->
+                            </tbody>
+                        </table>
+                    </div> <!-- table-wrapper -->
+
+                </div> <!-- experience__cti -->
+            </section>
+
+            <section id="skills">
+            </section>
+
+            <section id="reference">
+            </section>
+
         </div><!-- wrapper -->
     </body>
 </html>
 
+<script>
+
+
+$(function() {
+  $("#myTable").tablesorter({
+    initialized: function(table) {
+        /* stop loading animation */
+        $(".input-validity-status-loading").hide();
+
+        /* display tablesorter(equal of style.display=block) */
+        $("#myTable").show();
+    },
+    theme: 'dropbox-recome',
+    widgets: ['output'],
+    widgetOptions : {
+        output_separator     : ',',         // ',' 'json', 'array' or separator (e.g. ';')
+        //output_ignoreColumns : [0],         // columns to ignore [0, 1,... ] (zero-based index)
+        output_hiddenColumns : false,       // include hidden columns in the output
+        output_includeFooter : true,        // include footer rows in the output
+        output_includeHeader : true,        // include header rows in the output
+        output_headerRows    : false,       // output all header rows (if multiple rows)
+        output_dataAttrib    : 'data-name', // data-attribute containing alternate cell text
+        output_delivery      : 'd',         // (p)opup, (d)ownload
+        output_saveRows      : 'f',         // (a)ll, (v)isible, (f)iltered, jQuery filter selector (string only) or filter function
+        output_duplicateSpans: true,        // duplicate output data in tbody colspan/rowspan
+        output_replaceQuote  : '\u201c;',   // change quote to left double quote
+        output_includeHTML   : false,        // output includes all cell HTML (except the header cells)
+        output_trimSpaces    : true,       // remove extra white-space characters from beginning & end
+        output_wrapQuotes    : true,       // wrap every cell output in quotes
+        output_popupStyle    : 'width=580,height=310',
+        output_saveFileName  : `test.csv`,
+        // callbackJSON used when outputting JSON & any header cells has a colspan - unique names required
+        output_callbackJSON  : function($cell, txt, cellIndex) {
+            return txt + '(' + cellIndex + ')';
+        },
+        // callback executed when processing completes
+        output_callback      : function(config, data, url) {
+          // return false to stop delivery & do something else with the data
+          // return true OR modified data (v2.25.1) to continue download/output
+          return true;
+        },
+        // the need to modify this for Excel no longer exists
+        output_encoding      : 'data:application/octet-stream;charset=utf8,',
+        // override internal save file code and use an external plugin such as
+        // https://github.com/eligrey/FileSaver.js
+        output_savePlugin    : null /* function(config, widgetOptions, data) {
+          var blob = new Blob([data], {type: widgetOptions.output_encoding});
+          saveAs(blob, widgetOptions.output_saveFileName);
+        } */
+    },
+    headerTemplate: '{content}{icon}' // dropbox theme doesn't like a space between the content & icon
+  });
+});
+
+
+</script>

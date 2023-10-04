@@ -33,3 +33,85 @@ header {
     width: 100%;
     z-index: 3;
 }
+
+
+.eyecatch {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;    
+}
+
+
+
+.input-validity-status-loading {
+  opacity: 0; /* when the item is in progress, change this value to 1 */
+  position: absolute !important;
+  top: 40%;
+  right: 0.5rem;
+  font-size: 1px;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: var(--ikejima-accent-color);
+  background: -moz-linear-gradient(left, var(--ikejima-accent-color) 10%, rgba(75, 56, 39, 0) 42%);
+  background: -webkit-linear-gradient(left, var(--ikejima-accent-color) 10%, rgba(75, 56, 39, 0) 42%);
+  background: -o-linear-gradient(left, var(--ikejima-accent-color) 10%, rgba(75, 56, 39, 0) 42%);
+  background: -ms-linear-gradient(left, var(--ikejima-accent-color) 10%, rgba(75, 56, 39, 0) 42%);
+  background: linear-gradient(to right, var(--ikejima-accent-color) 10%, rgba(75, 56, 39, 0) 42%);
+  position: relative;
+  -webkit-animation: input-validity-status-loading-anim 1.4s infinite linear;
+  animation: input-validity-status-loading-anim 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0) translateY(-50%);
+}
+.input-validity-status-loading:before {
+  width: 50%;
+  height: 50%;
+  background: var(--ikejima-accent-color);
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.input-validity-status-loading:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+
+
+
+/* Typography
+--------------------------- */
+.ikejima-typography-medium {
+    font-size: 1rem;
+    color: var(--ikejima-font-color-dark);
+}
+
+.ikejima-typography-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--ikejima-font-color-dark);
+}
+
+
+@media(max-width: 880px) {
+    .eyecatch {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+}
