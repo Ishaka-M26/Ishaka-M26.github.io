@@ -44,10 +44,26 @@ header {
     height: var(--ikejima-header-height);
 }
 
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .eyecatch {
     display: flex;
     gap: 20px;
     flex-direction: row;
+}
+
+.eyecatch__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spacer-small {
+    height: 20px;
 }
 
 .ikejima-photo {
@@ -119,6 +135,10 @@ header {
     color: var(--ikejima-font-color-dark);
 }
 
+footer {
+    height: 300px;
+    background-color: var(--ikejima-accent-color-b);
+}
 
 @media(max-width: 880px) {
     .eyecatch {
